@@ -6,19 +6,24 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
- * 사용자의 상담 요청이 대기열에 등록된 결과를 반환.
+ * 사용자가 요청한 상담의 현재 상태와 연결 정보를 반환
  *
- * 최초 등록 시 역무원과 상담 시작 시간은 아직 존재하지 않으므로
- * staffName과 startedAt은 null로 반환.
+ * WAITING 상태에서는 현재 대기 순번을 반환하고,
+ * MATCHED 또는 IN_PROGRESS 상태에서는 OpenVidu 세션 ID를 반환
  */
 @Getter
 @AllArgsConstructor
-public class ConsultationCreateResponse {
+public class ConsultationStatusResponse {
 
     private Long consultationId;
+
     private ConsultationStatus status;
+
     private Long queuePosition;
-    private String staffName;
+
+    private String sessionId;
+
     private LocalDateTime requestedAt;
+
     private LocalDateTime startedAt;
 }
