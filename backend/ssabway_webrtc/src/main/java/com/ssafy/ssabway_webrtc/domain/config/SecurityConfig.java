@@ -1,0 +1,106 @@
+package com.ssafy.ssabway_webrtc.domain.config;
+
+import com.ssafy.ssabway_webrtc.common.jwt.JwtAccessDeniedHandler;
+import com.ssafy.ssabway_webrtc.common.jwt.JwtAuthenticationEntryPoint;
+import com.ssafy.ssabway_webrtc.common.jwt.JwtAuthenticationFilter;
+import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+@Configuration
+@RequiredArgsConstructor
+public class SecurityConfig {
+
+    private final JwtAuthenticationFilter
+        jwtAuthenticationFilter;
+
+    private final JwtAuthenticationEntryPoint
+        jwtAuthenticationEntryPoint;
+
+    private final JwtAccessDeniedHandler
+        jwtAccessDeniedHandler;
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(
+        HttpSecurity http
+    ) throws Exception {
+
+        http
+            .csrf(AbstractHttpConfigurer::disable)
+            .formLogin(AbstractHttpConfigurer::disable)
+            .httpBasic(AbstractHttpConfigurer::disable)
+            .sessionManagement(session ->
+                session.sessionCreationPolicy(
+                    SessionCreationPolicy.STATELESS
+                )
+            )
+            .authorizeHttpRequests(auth -> auth
+                // OpenVidu가 호출하므로 JWT 대신 Webhook Secret을 검증합니다.
+                .requestMatchers(
+                    HttpMethod.POST,
+                    "/api/v1/openvidu/webhooks"
+                ).permitAll()
+                .requestMatchers(
+                    HttpMethod.POST,
+                    "/internal/v1/openvidu/**"
+                )
+                .permitAll()
+                /*
+                 * 역무원의 상담 취소.
+                 *
+                 * ⚠️ 반드시 아래 USER 전용 규칙보다 먼저 와야 합니다.
+                 *    Spring Security는 먼저 매칭된 규칙만 적용하므로, 순서가
+                 *    바뀌면 /api/v1/consultations/** 규칙이 이 경로까지 삼켜
+                 *    STAFF 토큰이 컨트롤러에 닿기 전에 403으로 막힙니다.
+                 *
+                 * 담당 역무원 일치 여부는 ConsultationStaffCancelService가
+                 * staff_id로 추가 검증합니다.
+                 */
+                .requestMatchers(
+                    HttpMethod.POST,
+                    "/api/v1/consultations/*/staff-cancel"
+                )
+                .hasAuthority("STAFF")
+
+                // 사용자만 상담 요청 가능
+                .requestMatchers(
+                    "/api/v1/consultations/**"
+                )
+                .hasAuthority("USER")
+
+                // 상담 종료는 해당 상담을 담당하는 역무원만 요청할 수 있습니다.
+                // 담당 역무원 일치 여부는 OpenViduController에서 추가로 검증합니다.
+                .requestMatchers(
+                    HttpMethod.POST,
+                    "/api/v1/openvidu/sessions/*/end"
+                )
+                .hasAuthority("STAFF")
+
+                // 역무원 API는 STAFF만 접근 가능
+                .requestMatchers("/api/v1/**")
+                .authenticated()
+                .anyRequest()
+                .denyAll()
+            )
+            .exceptionHandling(handler -> handler
+                .authenticationEntryPoint(
+                    jwtAuthenticationEntryPoint
+                )
+                .accessDeniedHandler(
+                    jwtAccessDeniedHandler
+                )
+            )
+            .addFilterBefore(
+                jwtAuthenticationFilter,
+                UsernamePasswordAuthenticationFilter.class
+            );
+
+        return http.build();
+    }
+}

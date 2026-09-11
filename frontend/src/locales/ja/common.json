@@ -1,0 +1,589 @@
+{
+  "app": {
+    "name": "SSabway",
+    "tagline": "外国人観光客のための地下鉄案内"
+  },
+  "language": {
+    "select": "言語選択",
+    "changed": "言語を変更しました"
+  },
+  "auth": {
+    "signIn": "ログイン",
+    "signOut": "ログアウト",
+    "deleteAccount": "退会",
+    "accountMenu": "アカウントメニュー",
+    "signedOut": "ログアウトしました",
+    "withdraw": {
+      "title": "退会",
+      "description": "退会するには現在のパスワードを入力してください。",
+      "accountNotice": "{{email}} のアカウントを退会します",
+      "confirmDescription": "退会するとアカウントと利用履歴が削除され、元に戻せません。",
+      "loadingAccount": "アカウント情報を確認しています",
+      "password": "現在のパスワード",
+      "passwordPlaceholder": "パスワードを入力",
+      "cancel": "キャンセル",
+      "submit": "退会する",
+      "submitting": "処理中",
+      "success": "退会が完了しました",
+      "confirm": "OK",
+      "error": {
+        "wrongPassword": "パスワードが正しくありません。もう一度入力してください",
+        "failed": "退会に失敗しました · しばらくしてからお試しください",
+        "sessionExpired": "ログインの有効期限が切れました · もう一度ログインしてください",
+        "loadFailed": "アカウント情報を読み込めませんでした · しばらくしてからもう一度お試しください"
+      }
+    },
+    "login": {
+      "title": "ログイン",
+      "subtitle": "メールとパスワードでログインしてください。",
+      "orGoogle": "または Google で",
+      "email": "メールアドレス",
+      "emailPlaceholder": "you@example.com",
+      "password": "パスワード",
+      "passwordPlaceholder": "パスワードを入力",
+      "forgotPassword": "パスワードをお忘れですか?",
+      "noAccount": "アカウントをお持ちでないですか?",
+      "signUp": "会員登録",
+      "back": "戻る",
+      "success": "ログインしました",
+      "error": {
+        "invalidCredential": "メールアドレスまたはパスワードが正しくありません",
+        "unknown": "ログインに失敗しました・しばらくしてから再試行してください",
+        "googleRejected": "Google 認証に失敗しました · もう一度お試しください",
+        "googleFailed": "Google ログインに失敗しました · しばらくしてからお試しください",
+        "socialAccount": "Google アカウントで登録されたメールです · 下の Google ログインをご利用ください",
+        "localAccount": "すでに通常会員として登録されたメールです · メールとパスワードでログインしてください"
+      },
+      "googleUnavailable": "Google ログインを利用できません · ネットワークをご確認ください"
+    },
+    "passwordReset": {
+      "title": "パスワード再設定",
+      "subtitle": "メールを認証すると新しいパスワードを設定できます。",
+      "back": "戻る",
+      "email": "メールアドレス",
+      "emailPlaceholder": "you@example.com",
+      "sendCode": "認証を送信",
+      "resendCode": "再送信",
+      "sending": "送信中",
+      "codeSent": "認証メールを送信しました。メールをご確認ください",
+      "code": "認証コード（7桁）",
+      "verifyCode": "確認",
+      "verifying": "確認中",
+      "codeVerified": "メール認証が完了しました",
+      "remainingTime": "残り時間 {{time}}",
+      "newPassword": "新しいパスワード",
+      "newPasswordPlaceholder": "空白なしで 8 文字以上",
+      "confirmPassword": "新しいパスワード（確認）",
+      "confirmPasswordPlaceholder": "もう一度入力",
+      "submit": "パスワードを変更",
+      "submitting": "変更中",
+      "success": "パスワードを変更しました。もう一度ログインしてください",
+      "rememberedPassword": "パスワードを思い出しましたか？",
+      "signIn": "ログイン",
+      "error": {
+        "invalidEmail": "メールアドレスの形式が正しくありません",
+        "emailNotFound": "登録されていないメールアドレスです",
+        "duplicateEmail": "すでに使用されているメールアドレスです",
+        "tooManyRequests": "送信回数を超えました · しばらくしてからお試しください",
+        "sendFailed": "認証メールの送信に失敗しました · しばらくしてからお試しください",
+        "invalidCode": "認証コードが正しくありません",
+        "verifyFailed": "認証に失敗しました · しばらくしてからお試しください",
+        "codeExpired": "認証時間が終了しました · 認証メールを再度お受け取りください",
+        "invalidPassword": "パスワードの形式が正しくありません",
+        "unauthorized": "認証の有効期限が切れました · 最初からやり直してください",
+        "resetFailed": "パスワードの変更に失敗しました · しばらくしてからお試しください",
+        "verifiedExpired": "認証の有効時間が過ぎました · メール認証をやり直してください",
+        "passwordMismatch": "パスワードが一致しません",
+        "attemptExceeded": "認証の試行回数を超えました · 認証メールを再送信してください",
+        "socialAccount": "Google アカウントで登録されたメールのためパスワードがありません · Google ログインをご利用ください",
+        "passwordTooShort": "パスワードは 8 文字以上にしてください",
+        "passwordTooLong": "パスワードは 64 文字を超えられません",
+        "passwordHasSpace": "パスワードに空白は使えません"
+      }
+    },
+    "signUp": {
+      "title": "会員登録",
+      "subtitle": "メール認証のあと、パスワードを設定するだけです。",
+      "back": "戻る",
+      "email": "メールアドレス",
+      "emailPlaceholder": "you@example.com",
+      "checkEmail": "重複確認",
+      "checking": "確認中",
+      "emailAvailable": "使用できるメールアドレスです",
+      "resendCode": "再送信",
+      "sending": "送信中",
+      "codeSent": "認証メールを送信しました。メールをご確認ください",
+      "code": "認証コード（7桁）",
+      "verifyCode": "確認",
+      "verifying": "確認中",
+      "codeVerified": "メール認証が完了しました",
+      "remainingTime": "残り時間 {{time}}",
+      "password": "パスワード",
+      "passwordPlaceholder": "空白なしで 8 文字以上",
+      "confirmPassword": "パスワード（確認）",
+      "confirmPasswordPlaceholder": "もう一度入力",
+      "submit": "会員登録",
+      "submitting": "登録中",
+      "success": "会員登録が完了しました。ログインしてください",
+      "hasAccount": "すでにアカウントをお持ちですか？",
+      "signIn": "ログイン",
+      "error": {
+        "invalidEmail": "メールアドレスの形式が正しくありません",
+        "duplicateEmail": "すでに使用されているメールアドレスです",
+        "checkFailed": "重複確認に失敗しました · しばらくしてからお試しください",
+        "tooManyRequests": "送信回数を超えました · しばらくしてからお試しください",
+        "sendFailed": "認証メールの送信に失敗しました · しばらくしてからお試しください",
+        "invalidCode": "認証コードが正しくありません",
+        "verifyFailed": "認証に失敗しました · しばらくしてからお試しください",
+        "codeExpired": "認証時間が終了しました · 認証メールを再度お受け取りください",
+        "invalidForm": "入力形式が正しくありません",
+        "signUpFailed": "会員登録に失敗しました · しばらくしてからお試しください",
+        "passwordMismatch": "パスワードが一致しません",
+        "verifiedExpired": "認証の有効時間が過ぎました · メール認証をやり直してください",
+        "invalidPassword": "パスワードは空白なしで 8 文字以上 64 文字以下で入力してください",
+        "attemptExceeded": "認証の試行回数を超えました · 認証メールを再送信してください",
+        "passwordTooShort": "パスワードは 8 文字以上にしてください",
+        "passwordTooLong": "パスワードは 64 文字を超えられません",
+        "passwordHasSpace": "パスワードに空白は使えません"
+      }
+    }
+  },
+  "start": {
+    "startGuide": "ガイド開始",
+    "needConsentFirst": "先に位置情報の権限を選択してください",
+    "consent": {
+      "title": "位置情報のアクセス権限",
+      "allowHint": "同意すると最寄り駅を認識します",
+      "denyHint": "拒否時は標識撮影で位置を認識します",
+      "allow": "同意する",
+      "deny": "同意しない",
+      "allowed": "位置情報を許可しました · 最寄り駅を探せます",
+      "denied": "大丈夫です！標識の撮影で位置を認識できます",
+      "statusAllowed": "位置情報の利用に同意しました",
+      "statusDenied": "標識の撮影で位置を認識します",
+      "requesting": "確認中…",
+      "unavailable": "位置を取得できません · 標識の撮影で進められます",
+      "nearStation": "最寄り駅: {{station}}",
+      "switchToAllow": "同意に変更"
+    },
+    "tutorial": {
+      "eyebrow": "初めてご利用ですか？",
+      "bannerTitle": "1分でわかる使い方を見る",
+      "title": "使い方ガイド",
+      "prev": "前へ",
+      "next": "次へ",
+      "goToStep": "{{total}}枚中{{current}}枚目のガイドを見る",
+      "steps": {
+        "signs": "駅の案内標識をたどって現在地を案内する仕組み",
+        "photoGuide": "標識の正しい撮影方法と間違った例",
+        "videoCall": "道に迷ったときに駅員とビデオ通話をする方法"
+      }
+    }
+  },
+  "signCapture": {
+    "permissionNeeded": "カメラの許可が必要です",
+    "hint": "標識をフレームに合わせて撮影してください",
+    "zoomHint": "二本指で拡大・縮小できます",
+    "zoomReset": "拡大倍率をリセット",
+    "back": "戻る",
+    "shoot": "撮影",
+    "retake": "再撮影",
+    "analyze": "AI分析",
+    "analyzing": "AIが標識を分析しています…",
+    "needCaptureFirst": "先に標識を撮影してください",
+    "retaken": "もう一度撮影してください",
+    "captureFailed": "撮影に失敗しました · もう一度お試しください",
+    "analyzeFailedTitle": "分析に失敗しました",
+    "analyzeFailedDescription": "AI分析に失敗しました。\nもう一度撮影してください。",
+    "analyzeFailedRetake": "再撮影",
+    "lowConfidenceTitle": "位置を正確に認識できませんでした",
+    "lowConfidenceDescription": "標識に近づいてもう一度撮影してください。",
+    "capturedAlt": "撮影した標識の写真",
+    "error": {
+      "insecure": "カメラは安全な接続(HTTPS)でのみ使用できます",
+      "denied": "カメラの権限が必要です\nブラウザの設定でカメラを許可してください",
+      "notFound": "使用できるカメラが見つかりませんでした",
+      "inUse": "他のアプリがカメラを使用中です\n終了してからもう一度お試しください",
+      "unknown": "カメラを起動できませんでした",
+      "upload": "写真をアップロードする"
+    },
+    "predictFail": {
+      "notDetected": "写真から標識を見つけられませんでした。\n標識がはっきり写るように撮り直してください。",
+      "tooLarge": "写真のサイズが大きすぎます。\nより小さく（15MB以下）撮り直してください。",
+      "invalidImage": "写真を読み取れませんでした。\nもう一度撮影してください。",
+      "serverError": "標識認識サーバーに一時的な問題があります。\nしばらくしてから撮り直してください。"
+    }
+  },
+  "destination": {
+    "placeholder": "どこへ行きますか？",
+    "search": "検索",
+    "clear": "入力を消す",
+    "back": "戻る",
+    "searching": "場所を検索しています…",
+    "noResult": "検索結果がありません\n施設名ではなく住所で検索してみてください",
+    "searchFailed": "検索に失敗しました・しばらくしてからもう一度お試しください",
+    "needKeyword": "検索語を入力してください",
+    "mapNotReady": "地図を読み込んでいます・少々お待ちください",
+    "mapLoading": "地図を読み込み中",
+    "selected": "選択した目的地",
+    "change": "選び直す",
+    "next": "次へ",
+    "error": {
+      "missingKey": "地図キーが設定されていません\nconfig.js の NAVER_MAP_CLIENT_ID を確認してください",
+      "authFailed": "地図の認証に失敗しました\nClient ID とコンソールの Web サービス URL 登録をご確認ください",
+      "mapFailed": "地図を読み込めませんでした\nネットワーク状態をご確認ください"
+    },
+    "setOrigin": "出発地に設定",
+    "setDestination": "目的地に設定",
+    "originSet": "出発地に設定済み",
+    "destinationSet": "目的地に設定済み",
+    "originApplied": "{{name}}を出発地に設定しました",
+    "needBoth": "出発地と目的地を両方選んでください",
+    "marker": {
+      "origin": "出発地",
+      "destination": "目的地"
+    },
+    "recenter": "現在地へ移動"
+  },
+  "location": {
+    "captureSign": "案内標識を撮影する",
+    "useGps": "現在位置を使う",
+    "selectStation": "駅を手動で選択する"
+  },
+  "route": {
+    "lane": { "line1": "1号線", "line2": "2号線", "line3": "3号線", "daegyeong": "大慶線" },
+    "next": "次へ",
+    "prev": "戻る",
+    "arrived": "到着しました",
+    "select": {
+      "noIndoorGuide": "この経路は屋内案内に対応していません\n別の経路を選んでください",
+      "title": "おすすめルート",
+      "back": "戻る",
+      "pathIntro": "{{destination}}までの地下鉄ルートです。\n{{station}}までご案内します。",
+      "walkNotice": "駅を出た後、別途移動が必要な場合があります！",
+      "badge": {
+        "fastest": "最速",
+        "noTransfer": "乗換なし",
+        "cheapest": "最安"
+      },
+      "noTransfer": "乗換なし",
+      "transferCount": "乗換{{n}}回",
+      "start": "経路を選択",
+      "notice": "運行状況により実際の所要時間は変わることがあります",
+      "loading": "ルートを検索しています…",
+      "failed": "ルートを取得できませんでした\nしばらくしてからもう一度お試しください",
+      "empty": "利用できるルートが見つかりませんでした\n目的地を選び直してください",
+      "changeDestination": "目的地を選び直す",
+      "durationMin": "{{m}}分",
+      "durationHour": "{{h}}時間{{m}}分",
+      "fare": "{{amount}}₩",
+      "needOrigin": "出発地がまだ決まっていません\n地図で選んでください",
+      "needDestination": "目的地がまだ決まっていません\n地図で選んでください",
+      "pickOnMap": "地図で選ぶ",
+      "failedNetwork": "経路サーバーに接続できませんでした\nネットワークとサーバーの状態を確認してください",
+      "failedNoRoute": "地下鉄のみで行ける経路だけ検索できます。\n目的地を選び直してください。",
+      "failedTooClose": "700m以内の目的地は検索できません。\n目的地を選び直してください。",
+      "reselectEndpoints": "目的地を選び直す",
+      "failedOdsay": "経路情報を取得できませんでした\nしばらくしてからもう一度お試しください",
+      "failedUnexpected": "経路サーバーがリクエストを処理できませんでした (HTTP {{status}})\nしばらくしてからお試しください"
+    }
+  },
+  "userInfo": {
+    "gateDestination": "{{station}} {{lane}} 改札口",
+    "title": "案内情報の確認",
+    "back": "戻る",
+    "change": "変更",
+    "rescan": "再撮影",
+    "originLocation": "出発位置を駅マップで見る",
+    "needRoute": "まず経路を選んでください\n出発駅と到着駅が決まると案内を開始できます",
+    "pickRoute": "経路を選ぶ",
+    "start": "ルート案内を開始",
+    "needAnswers": "すべての質問にお答えください",
+    "started": "選択した条件で案内を開始します",
+    "preference": {
+      "label": "ルートのカスタム設定",
+      "back": "前の質問",
+      "reset": "選び直す",
+      "progress": "質問 {{current}} / {{total}}",
+      "done": "すべての質問に回答しました",
+      "elevator": {
+        "question": "エレベーターの利用をご希望ですか？",
+        "yes": "はい",
+        "no": "いいえ"
+      },
+      "cardReady": {
+        "question": "交通カードをお持ちで、残高は十分ですか？",
+        "yes": "はい、すぐ乗れます",
+        "no": "いいえ"
+      },
+      "preparation": {
+        "question": "何が必要ですか？",
+        "charge": "カードのチャージ（カードあり・残高不足）",
+        "buyCard": "交通カードの購入（カードなし）",
+        "singleTicket": "1回券の発券（カードなし）"
+      },
+      "cash": {
+        "question": "現金をお持ちですか？",
+        "yes": "はい、あります",
+        "no": "いいえ、ありません"
+      }
+    },
+    "plan": {
+      "direct": {
+        "title": "そのまま乗車できます",
+        "description": "交通カードで改札を通るだけです"
+      },
+      "charge": {
+        "title": "コンビニでカードをチャージします",
+        "description": "チャージが済んだら改札まで案内します",
+        "atmTitle": "先にATMを経由します",
+        "atmDescription": "現金を引き出してからコンビニでチャージします"
+      },
+      "buyCard": {
+        "title": "コンビニで交通カードを購入します",
+        "description": "購入が済んだら改札まで案内します",
+        "atmTitle": "先にATMを経由します",
+        "atmDescription": "現金を引き出してからコンビニでカードを購入します"
+      },
+      "singleTicket": {
+        "title": "券売機で1回券を発券します",
+        "description": "発券が済んだら改札まで案内します",
+        "atmTitle": "先にATMを経由します",
+        "atmDescription": "現金を引き出してから券売機で1回券を発券します"
+      }
+    }
+  },
+  "routeGuide": {
+    "back": "戻る",
+    "label": "ルート案内",
+    "stepCount": "{{current}} / {{total}} ステップ",
+    "progress": "全{{total}}ステップ中{{current}}ステップ目",
+    "rescan": "ルート再検索",
+    "rescanning": "案内標識をもう一度撮影してルートを探します",
+    "nextSign": "次の案内標識",
+    "exit": "出口",
+    "prev": "戻る",
+    "next": "次へ",
+    "showMyLocation": "駅構内での現在位置を見る",
+    "arrive": "到着完了",
+    "stationMap": {
+      "title": "駅構内の現在位置",
+      "close": "閉じる",
+      "zoomIn": "拡大",
+      "zoomOut": "縮小",
+      "recenter": "現在地へ移動",
+      "legend": {
+        "myLocation": "現在地",
+        "current": "現在の区間・進行方向",
+        "upcoming": "次の地点・残りの経路",
+        "passed": "通ってきた経路"
+      },
+      "mapAlt": "駅構内図と案内ルート",
+      "myLocationLabel": "現在地",
+      "facility": {
+        "_heading": "施設案内",
+        "stairs": "階段・エスカレーター",
+        "elevator": "エレベーター",
+        "exit": "出口",
+        "ticketMachine": "券売機",
+        "gate": "改札口",
+        "restroom": "トイレ",
+        "ticketOffice": "きっぷうりば",
+        "store": "コンビニ",
+        "atm": "ATM",
+        "waitingRoom": "待合室"
+      },
+      "label": {
+        "shop": "商店",
+        "smokingArea": "喫煙所",
+        "lotteDepartmentStore": "ロッテ百貨店",
+        "departmentStore": "百貨店",
+        "center": "中央",
+        "parking": "駐車場",
+        "meetingRoom": "会議室",
+        "policeStation": "警察署",
+        "restaurant": "レストラン",
+        "nursingRoom": "授乳室",
+        "daegyeongLineGumi": "大慶線（亀尾方面）",
+        "daegyeongLineGyeongsan": "大慶線（慶山方面）",
+        "platform1": "1番のりば）ソウル / 大田 / 栄州 / 金泉方面",
+        "platform6": "6番のりば）釜山 / 晋州 / 釜田 / 新海雲台方面",
+        "daeguStationExit1": "大邱駅 1番出口",
+        "daeguStationExit2": "大邱駅 2番出口",
+        "daeguStationExit3": "大邱駅 3番出口",
+        "daeguStationExit4": "大邱駅 4番出口"
+      }
+    },
+    "help": "ビデオ相談",
+    "loading": "ルート案内を読み込んでいます…",
+    "failed": "ルート案内を読み込めませんでした\nしばらくしてからもう一度お試しください",
+    "empty": "案内するステップが見つかりませんでした\n案内標識をもう一度撮影してください",
+    "nextPoint": "次の地点",
+    "arriveAt": "到着地点",
+    "stepFallback": "案内表示に従って進んでください",
+    "needAnswers": "経路に必要な情報がまだありません\n質問に答えると経路をご案内します",
+    "goAnswer": "質問に答える",
+    "withoutElevator": "エレベーターなしで再検索",
+    "retryingWithStairs": "階段を含めて再検索しています",
+    "failedNetwork": "案内サーバーに接続できませんでした\nネットワークをご確認ください",
+    "failedNoRoute": "移動できる経路が見つかりません\n案内表示をもう一度撮影してください",
+    "failedNoStepFree": "階段を使わない経路がありません\n階段を含めて再検索できます",
+    "failedUnknownPoint": "出発地点を確認できませんでした\n案内表示をもう一度撮影してください",
+    "failedNeedAnswers": "経路に必要な情報が足りません\nもう一度質問にお答えください",
+    "failedNotReady": "案内データを準備しています\nしばらくしてからお試しください",
+    "elevator": {
+      "down": "下の階へ移動",
+      "up": "上の階へ移動"
+    },
+    "point": {
+      "signage": "案内表示",
+      "elevator": "エレベーター",
+      "exit": "出口",
+      "gate": "改札口",
+      "poi": "施設",
+      "store": "コンビニ",
+      "ticketOffice": "きっぷうりば",
+      "ticketMachine": "券売機",
+      "atm": "ATM",
+      "toilet": "トイレ"
+    },
+    "todo": {
+      "charge": "ここでチャージしてください",
+      "buyCard": "ここで交通カードを購入してください",
+      "singleTicket": "ここで1回券を購入してください",
+      "withdrawCash": "ここで現金を引き出してください",
+      "toGate": "改札口へ向かってください"
+    },
+    "failedUnexpected": "案内サーバーがリクエストを処理できませんでした (HTTP {{status}})\nしばらくしてからお試しください",
+    "failedFacility": "今の条件では立ち寄る場所に行けません\n別の方法でもう一度お答えください",
+    "changeAnswers": "回答をやり直す"
+  },
+  "arrival": {
+    "back": "戻る",
+    "title": "案内が完了しました!",
+    "finalDestination": "最終目的地 {{name}}",
+    "duration": "所要時間",
+    "origin": "出発地",
+    "destination": "目的地",
+    "alightStation": "降車駅",
+    "transferHint": "{{station}}で降りたら、案内標識をもう一度撮影してください。\n続けてご案内します。",
+    "noSummary": "今回の移動情報が見つかりませんでした\n目的地をもう一度選んでください",
+    "goMain": "最初に戻る"
+  },
+  "helpChat": {
+    "back": "戻る",
+    "title": "SSabwayサポート",
+    "online": "オンライン",
+    "greeting": "何をお手伝いしましょうか？",
+    "connectStaff": "駅員とビデオ通話",
+    "loginRequired": "ビデオ通話にはログインが必要です。",
+    "loginAndConnect": "ログインして通話する",
+    "routeRequired": "先にルート案内を開始してください。\n出発地と目的地がわからないと接続できません。",
+    "ready": "接続の準備ができました。\n下のボタンで接続を開始してください。",
+    "connect": "ビデオ通話",
+    "recordNotice": "係員保護のため通話内容は録音されます",
+    "backToGuide": "ルート案内に戻る",
+    "rejected": {
+      "blocked": "この駅ではビデオ相談を利用できません。\n駅事務室に直接お越しください。",
+      "duplicated": "すでに進行中の相談リクエストがあります。\nしばらくしてからもう一度お試しください。",
+      "noStaff": "現在この駅には対応できる駅員がいません。\nしばらくしてからもう一度お試しください。",
+      "failed": "相談をリクエストできませんでした。\nしばらくしてからもう一度お試しください。"
+    }
+  },
+  "consultation": {
+    "request": "ヘルプを依頼する",
+    "connecting": "駅員に接続しています...",
+    "waitingStaff": "スタッフを待っています…",
+    "queuePosition": "あなたの前に{{position}}人待っています",
+    "unavailable": "現在対応できる駅員がいません",
+    "micOnly": "駅員が音声で案内します。カメラはオフです。",
+    "end": "通話を終了する",
+    "video": {
+      "staffConnected": "スタッフ接続中",
+      "faceBlurOn": "背面カメラ・顔モザイクON",
+      "recording": "録音中",
+      "mic": "マイク",
+      "camera": "カメラ",
+      "endShort": "終了",
+      "micOn": "マイクをオンにしました",
+      "micOff": "マイクをオフにしました",
+      "cameraOn": "カメラをオンにしました",
+      "cameraOff": "カメラをオフにしました",
+      "ended": "相談が終了しました",
+      "endedByStaff": "駅員が相談を終了しました",
+      "alreadyEnded": "この相談はすでに終了しています",
+      "canceled": "相談のリクエストがキャンセルされました",
+      "waitingStaff": "スタッフを待っています…",
+      "queuePosition": "あなたの前に{{position}}人待っています",
+      "noConsultationId": "相談情報が見つかりません。ヘルプからやり直してください。",
+      "connecting": "接続しています…",
+      "reconnecting": "ネットワークが不安定です。再接続しています…",
+      "joinFailed": "スタッフに接続できませんでした。しばらくしてからもう一度お試しください。",
+      "permission": {
+        "title": "マイクを許可",
+        "description": "スタッフとのビデオ通話には\nマイクの許可が必要です。",
+        "allow": "許可",
+        "deny": "拒否",
+        "allowed": "マイクを許可しました・スタッフと接続しました",
+        "denied": "許可しないとビデオ通話を開始できません",
+        "requesting": "権限を確認しています…"
+      },
+      "endConfirm": {
+        "title": "相談を終了しますか？",
+        "description": "終了後も道案内は続けて利用できます",
+        "confirm": "終了",
+        "keep": "続ける"
+      }
+    }
+  },
+  "common": {
+    "retry": "再試行",
+    "cancel": "キャンセル",
+    "confirm": "確認",
+    "close": "閉じる",
+    "goHome": "最初に戻る",
+    "notReady": "準備中の画面です",
+    "notFound": {
+      "title": "ページが見つかりません",
+      "description": "アドレスが間違っているか、削除された画面です。"
+    }
+  },
+  "station": {
+    "daegu": "大邱駅"
+  },
+  "landmark": {
+    "at": "{{station}} {{floor}}階 {{place}}前",
+    "atNoFloor": "{{station}} {{place}}前",
+    "near": "{{station}} {{floor}}階 {{place}}付近",
+    "nearNoFloor": "{{station}} {{place}}付近",
+    "place": {
+      "exit": "{{number}}番出口",
+      "gate": "改札口",
+      "elevator": "エレベーター",
+      "store": "コンビニ",
+      "atm": "ATM",
+      "ticketOffice": "きっぷうりば",
+      "ticketMachine": "券売機",
+      "toilet": "トイレ"
+    }
+  },
+  "trip": {
+    "originEmpty": "出発地を選択",
+    "destinationEmpty": "目的地を選択",
+    "focusOrigin": "地図で出発地を表示",
+    "focusDestination": "地図で目的地を表示"
+  },
+  "install": {
+    "title": "SSabway をインストール",
+    "description": "全画面で開き、地下でも経路がそのまま残ります。",
+    "manualDescription": "2ステップでホーム画面に追加できます。",
+    "step1": "ブラウザのツールバーにある共有ボタンをタップ",
+    "step2": "「ホーム画面に追加」を選択",
+    "action": "インストール",
+    "gotIt": "OK",
+    "later": "あとで",
+    "close": "閉じる",
+    "installed": "インストールしました！ホーム画面から SSabway を開いてください。",
+    "unavailable": "インストールを開始できませんでした · ブラウザメニューの「アプリをインストール」をお試しください"
+  }
+}
