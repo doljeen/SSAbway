@@ -1,0 +1,31 @@
+services:
+  nginx:
+    image: nginx:alpine
+    volumes:
+      - ./deploy/nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "127.0.0.1:5442:80"
+    depends_on: [frontend, api, signaling]
+    networks:
+      default:
+      edge:
+    restart: unless-stopped
+  ai:
+    build: ./ai/serve
+    environment:
+      TORCH_THREADS: "2"
+      MAX_SIDE: "1280"
+      TZ: Asia/Seoul
+      # 실시간 번역 자막. 없으면 /ws/v1/ai/translation 만 닫히고
+      # 표지판 인식·얼굴 검출은 그대로 동작한다.
+      AZURE_SPEECH_KEY: ${AZURE_SPEECH_KEY}
+      AZURE_SPEECH_REGION: ${AZURE_SPEECH_REGION:-koreacentral}
+    volumes:
+      - /opt/models:/models:ro
+    ports:
+      - "127.0.0.1:8000:8000"
+    restart: unless-stopped
+
+networks:
+  edge:
+    external: true
