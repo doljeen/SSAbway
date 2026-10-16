@@ -2,7 +2,7 @@
   <img src="docs/readme/cover.png" width="800" alt="SSabway — 낯선 역에서도, 길은 낯설지 않도록. 팀 8번출구" />
 </p>
 
-# SSabway · 강석진 포트폴리오
+# SSabway
 
 **외국인 여행객을 위한 지하철 실내 길안내·화상 상담 서비스**
 
